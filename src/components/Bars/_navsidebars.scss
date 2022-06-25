@@ -1,0 +1,48 @@
+@import "../../styles/vars";
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 20px;
+  top: 14px;
+}
+
+.bm-burger-bars {
+  background: transparent;
+  height: "15%";
+}
+
+.bm-burger-bars-hover {
+  background: transparent;
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: $orangeColor;
+}
+
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+.bm-menu {
+  background: $darkColor;
+  padding: 1.5em;
+  font-size: 1.15em;
+}
+
+.bm-item {
+  display: inline-block;
+}
+
+.link-light {
+  &:hover {
+    color: $orangeColor;
+  }
+}

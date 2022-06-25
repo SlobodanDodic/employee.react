@@ -1,0 +1,59 @@
+@import "../../styles/vars";
+
+#outer-container {
+  height: 100vh;
+}
+
+#outer-icon {
+  color: $whiteColor;
+  width: 70px;
+  height: 40px;
+  padding-top: 15px;
+  padding-right: 15px;
+}
+
+#page-wrap {
+  padding: 50px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#rotateImg {
+  animation: spin 20s linear infinite;
+  height: 30vh;
+  pointer-events: none;
+  filter: drop-shadow(16px 6px 4px black);
+}
+
+.div-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  justify-content: center;
+}
+
+.div-inner-container {
+  display: flex;
+  color: $greyColor;
+  letter-spacing: 2px;
+  padding-top: 25px;
+  h3 {
+    padding-right: 10px;
+    a {
+      background: #fb7c1b;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      letter-spacing: 5px;
+      padding: 7px;
+    }
+  }
+}

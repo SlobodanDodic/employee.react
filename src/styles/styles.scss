@@ -1,0 +1,19 @@
+@import "_vars.scss";
+@import "../components/Bars/_navsidebars.scss";
+@import "../components/Dashboard/_dashboard.scss";
+@import "../components/Employees/_employees.scss";
+@import "../components/Landing/_landing.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: $regularFont;
+}

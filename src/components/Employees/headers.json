@@ -1,0 +1,37 @@
+[
+  {
+    "prop": "name",
+    "title": "Name",
+    "isFilterable": true,
+    "isSortable": true
+  },
+  {
+    "prop": "contract",
+    "title": "Contract until",
+    "isSortable": true
+  },
+  {
+    "prop": "eyes",
+    "title": "Eyes check",
+    "isSortable": true
+  },
+  {
+    "prop": "safety",
+    "title": "Safety test",
+    "isSortable": true
+  },
+  {
+    "prop": "fire",
+    "title": "Fire test",
+    "isSortable": true
+  },
+  {
+    "prop": "firstAid",
+    "title": "First aid test",
+    "isSortable": true
+  },
+  {
+    "prop": "options",
+    "title": "Options"
+  }
+]
