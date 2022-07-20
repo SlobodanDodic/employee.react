@@ -7,7 +7,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const CustomDate = ({ label, placeholder, selected, onChange }) => {
   return (
-    <Col xs={2} md={3}>
+    <Col xs={2} className="me-3">
       <Form.Label>{label}</Form.Label>
       <DatePicker
         className="custom-date"
@@ -20,6 +20,7 @@ const CustomDate = ({ label, placeholder, selected, onChange }) => {
         placeholder={placeholder}
         selected={selected}
         onChange={onChange}
+        required
       />
     </Col>
   );

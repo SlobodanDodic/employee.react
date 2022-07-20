@@ -33,6 +33,11 @@ const Sidebar = () => {
           <BsInfoCircleFill />
           <span className="p-3">Info</span>
         </Link>
+        <br />
+        <Link to={"/clerks"} className="nav-link link-light">
+          <BsPeopleFill />
+          <span className="p-3">Clerks</span>
+        </Link>
       </nav>
     </Menu>
   );

@@ -20,6 +20,7 @@ const Accounts = ({ employee, setEmployee }) => {
               placeholder="Account number"
               value={employee.bankAccountOne}
               onChange={(e) => setEmployee({ ...employee, bankAccountOne: e.target.value })}
+              required
             />
             <InputGroup.Text>Second</InputGroup.Text>
             <FormControl
@@ -29,6 +30,21 @@ const Accounts = ({ employee, setEmployee }) => {
               onChange={(e) => setEmployee({ ...employee, bankAccountTwo: e.target.value })}
             />
           </InputGroup>
+          {employee.bankAccountOne.length !== 0 && employee.bankAccountOne.length !== 18 ? (
+            <Form.Control.Feedback className="d-inline me-3" type="invalid">
+              First account number must have exactly 18 digits. You are missing {18 - employee.bankAccountOne.length}
+              <br />
+            </Form.Control.Feedback>
+          ) : (
+            " "
+          )}
+          {employee.bankAccountTwo.length !== 0 && employee.bankAccountTwo.length !== 18 ? (
+            <Form.Control.Feedback className="d-inline me-3" type="invalid">
+              Second account number must have exactly 18 digits. You are missing {18 - employee.bankAccountTwo.length}
+            </Form.Control.Feedback>
+          ) : (
+            " "
+          )}
         </Col>
       </Row>
 
@@ -42,6 +58,7 @@ const Accounts = ({ employee, setEmployee }) => {
               placeholder="Total"
               value={employee.payTotal}
               onChange={(e) => setEmployee({ ...employee, payTotal: e.target.value })}
+              required
             />
             <InputGroup.Text>.00 €</InputGroup.Text>
             <FormControl
@@ -49,6 +66,7 @@ const Accounts = ({ employee, setEmployee }) => {
               placeholder="On account"
               value={employee.payAccount}
               onChange={(e) => setEmployee({ ...employee, payAccount: e.target.value })}
+              required
             />
             <InputGroup.Text>.00 €</InputGroup.Text>
           </InputGroup>

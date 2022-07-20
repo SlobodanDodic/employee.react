@@ -32,6 +32,7 @@
   },
   {
     "prop": "options",
-    "title": "Options"
+    "title": "Options",
+    "Cell": "(row) => (<div><button onClick={() => viewNotification(row.original)}/></div>)"
   }
 ]

@@ -9,12 +9,10 @@ import axios from "axios";
 
 // import headers from "./headers.json";
 import AddEmployee from "./AddEmployee";
-import EditEmployee from "./EditEmployee";
 
-const Employees = ({ user, clearStorage }) => {
+const Employee = ({ user, clearStorage }) => {
   const [data, setData] = useState([]);
   const [show, setShow] = useState(false);
-  const [showEdit, setShowEdit] = useState(false);
 
   const navigate = useNavigate();
 
@@ -33,10 +31,8 @@ const Employees = ({ user, clearStorage }) => {
     getData();
   }, [getData]);
 
-  const edit = (employee, showEdit) => {
-    // setShowEdit(employee);
-    console.log(employee);
-    // console.log(showEdit);
+  const edit = (id) => {
+    console.log("edit");
   };
 
   const headers = [
@@ -76,20 +72,7 @@ const Employees = ({ user, clearStorage }) => {
       title: "Options",
       cell: (row) => (
         <div>
-          <Button className="w-30 d-inline-block h-auto m-1" variant="outline-success" size="sm">
-            View
-          </Button>
-          <Button
-            className="w-30 d-inline-block h-auto m-1"
-            variant="outline-primary"
-            size="sm"
-            onClick={() => edit(row)}
-          >
-            Edit
-          </Button>
-          <Button className="w-30 d-inline-block h-auto m-1" variant="outline-danger" size="sm">
-            Delete
-          </Button>
+          <button name={"edit"} onClick={() => edit(row)} />
         </div>
       ),
     },
@@ -98,7 +81,6 @@ const Employees = ({ user, clearStorage }) => {
   return (
     <>
       <AddEmployee getData={getData} show={show} setShow={setShow} user={user} />
-      <EditEmployee myEmployee={showEdit} getData={getData} setShow={setShowEdit} user={user} show={showEdit} />
 
       <DatatableWrapper
         body={data}
@@ -138,4 +120,4 @@ const Employees = ({ user, clearStorage }) => {
   );
 };
 
-export default Employees;
+export default Employee;

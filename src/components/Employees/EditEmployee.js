@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
 
 import Form from "react-bootstrap/Form";
@@ -11,18 +11,17 @@ import Tests from "./Tests";
 import BasicInfo from "./BasicInfo";
 import Benefits from "./Benefits";
 
-import { initialState } from "./initialState";
-
-const AddEmployee = ({ getData, show, setShow, user }) => {
-  const [employee, setEmployee] = useState(initialState);
+const EditEmployee = ({ myEmployee, getData, setShow, user }) => {
+  const [employee, setEmployee] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/employees", employee, { headers: { authorization: "Bearer " + user.token } })
+      .put("http://localhost:8000/employees/" + employee._id, employee, {
+        headers: { authorization: "Bearer " + user.token },
+      })
       .then(() => {
         getData();
-        setEmployee(initialState);
         setShow(false);
       })
       .catch((error) => {
@@ -32,9 +31,13 @@ const AddEmployee = ({ getData, show, setShow, user }) => {
       });
   };
 
+  useEffect(() => {
+    setEmployee(myEmployee);
+  }, [myEmployee]);
+
   return (
     <Modal
-      show={show}
+      show={employee}
       onHide={() => setShow(false)}
       dialogClassName="modal-90w"
       aria-labelledby="example-custom-modal-styling-title"
@@ -59,4 +62,4 @@ const AddEmployee = ({ getData, show, setShow, user }) => {
   );
 };
 
-export default AddEmployee;
+export default EditEmployee;

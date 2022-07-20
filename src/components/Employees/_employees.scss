@@ -73,6 +73,9 @@ form {
     border: none;
     text-align: center;
     padding: 0;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .comments {

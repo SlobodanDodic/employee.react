@@ -38,6 +38,7 @@ const Benefits = ({ employee, setEmployee }) => {
                 onChange={(e) => {
                   setEmployee({ ...employee, benefitUser: e.target.value });
                 }}
+                required
               />
             </td>
             <td>
@@ -51,6 +52,7 @@ const Benefits = ({ employee, setEmployee }) => {
                 placeholderText="Select a date"
                 selected={employee.healthDate}
                 onChange={(newValue) => setEmployee({ ...employee, healthDate: newValue })}
+                required
               />
             </td>
             <td>
@@ -64,6 +66,7 @@ const Benefits = ({ employee, setEmployee }) => {
                 placeholderText="Select a date"
                 selected={employee.fitpassDate}
                 onChange={(newValue) => setEmployee({ ...employee, fitpassDate: newValue })}
+                required
               />
             </td>
             <td>Edit / Delete</td>

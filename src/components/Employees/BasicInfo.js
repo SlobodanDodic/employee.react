@@ -32,6 +32,7 @@ const BasicInfo = ({ employee, setEmployee }) => {
               onChange={(e) => {
                 setEmployee({ ...employee, name: e.target.value });
               }}
+              required
             />
           </InputGroup>
         </Col>
@@ -49,10 +50,20 @@ const BasicInfo = ({ employee, setEmployee }) => {
               onChange={(e) => {
                 setEmployee({ ...employee, jmbg: e.target.value });
               }}
+              required
             />
           </InputGroup>
+          {employee.jmbg.length !== 0 && employee.jmbg.length !== 13 ? (
+            <Form.Control.Feedback className="d-inline me-3" type="invalid">
+              JMBG must have exactly 13 digits. You are missing {13 - employee.jmbg.length}
+            </Form.Control.Feedback>
+          ) : (
+            " "
+          )}
         </Col>
+      </Row>
 
+      <Row>
         <CustomDate
           label="Birthday"
           selected={employee.birthday}
@@ -84,6 +95,7 @@ const BasicInfo = ({ employee, setEmployee }) => {
               onChange={(e) => {
                 setEmployee({ ...employee, jobRole: e.target.value });
               }}
+              required
             />
           </InputGroup>
         </Col>
@@ -104,6 +116,7 @@ const BasicInfo = ({ employee, setEmployee }) => {
                   skills: e.target.value.split(","),
                 })
               }
+              required
             />
           </InputGroup>
         </Col>
