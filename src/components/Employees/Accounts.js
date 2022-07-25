@@ -54,18 +54,18 @@ const Accounts = ({ employee, setEmployee }) => {
           <InputGroup className="mb-3 paycheck-input">
             <InputGroup.Text>Paycheck</InputGroup.Text>
             <FormControl
-              aria-label="total"
-              placeholder="Total"
-              value={employee.payTotal}
-              onChange={(e) => setEmployee({ ...employee, payTotal: e.target.value })}
+              aria-label="paycheck"
+              placeholder="Paycheck"
+              value={employee.paycheck}
+              onChange={(e) => setEmployee({ ...employee, paycheck: e.target.value })}
               required
             />
             <InputGroup.Text>.00 €</InputGroup.Text>
             <FormControl
-              aria-label="account"
-              placeholder="On account"
-              value={employee.payAccount}
-              onChange={(e) => setEmployee({ ...employee, payAccount: e.target.value })}
+              aria-label="bonus"
+              placeholder="Bonus"
+              value={employee.bonus}
+              onChange={(e) => setEmployee({ ...employee, bonus: e.target.value })}
               required
             />
             <InputGroup.Text>.00 €</InputGroup.Text>
